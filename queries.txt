@@ -1,0 +1,7 @@
+Query 1:
+SELECT names.name, counts.postcode, counts.year, counts.count FROM names, counts WHERE counts.NameId == names.NameId AND name == "Melanie" AND postcode == "CA"
+Query 2:
+SELECT names.name, counts.gender, counts.postcode,  counts.year, counts.count FROM names, counts WHERE counts.NameId == names.NameId AND name LIKE "Geo%" AND postcode == "CA"
+
+Query 3:
+SELECT year, SUM(count) FROM counts, names WHERE postcode == 'GA' AND names.NameId == counts.NameId AND name LIKE "Geo%"  GROUP BY year
